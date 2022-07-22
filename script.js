@@ -20,14 +20,14 @@ window.addEventListener('mousemove', function(event){
 
 ctx.fillStyle = 'yellow';
 ctx.font = '2vw Verdana';
-ctx.fillText('I Love Hnin', 0, 30);
-const textCoordinates = ctx.getImageData(0, 0, 200, 100);
+ctx.fillText('It\'s me! Byron', 0, 30);
+const textCoordinates = ctx.getImageData(0, 0, 300, 100);
 
 class Particle{
     constructor(x, y){
         this.x = x;
         this.y = y;
-        this.size = 2;
+        this.size = 1;
         this.baseX = this.x;
         this.baseY = this.y;
         this.density = (Math.random() * 40) + 5;
@@ -57,11 +57,11 @@ class Particle{
         else{
             if (this.x !== this.baseX){
                 let dx = this.x - this.baseX;
-                this.x -= dx/6;
+                this.x -= dx/3;
             }
             if (this.y !== this.baseY){
                 let dy = this.y - this.baseY;
-                this.y -= dy/6;
+                this.y -= dy/3;
             }
         }
     }
@@ -74,7 +74,7 @@ function init(){
             if (textCoordinates.data[(y * 4 * textCoordinates.width) + (x * 4) + 3] > 128){
                 let positionX = x + adjustX;
                 let positionY = y + adjustY;
-                particleArray.push(new Particle(positionX * 6, positionY * 6));
+                particleArray.push(new Particle(positionX * 3, positionY * 3));
             }
         }
     }
@@ -102,10 +102,10 @@ function connect(){
             let dx = particleArray[a].x - particleArray[b].x;
             let dy = particleArray[a].y - particleArray[b].y;
             let distance = Math.sqrt(dx * dx + dy * dy);
-            opacityValue = 1 - (distance/20);
+            opacityValue = 1 - (distance/10);
             ctx.strokeStyle = 'rgba(255,255,0,'+opacityValue+')';
 
-            if(distance < 20){
+            if(distance < 10){
                 ctx.lineWidth = 1;
                 ctx.beginPath();
                 ctx.moveTo(particleArray[a].x, particleArray[a].y);
