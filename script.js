@@ -21,7 +21,7 @@ window.addEventListener('mousemove', function(event){
 ctx.fillStyle = 'yellow';
 ctx.font = '2vw Verdana';
 ctx.fillText('I Love Hnin', 0, 30);
-const textCoordinates = ctx.getImageData(0, 0, 200, 200);
+const textCoordinates = ctx.getImageData(0, 0, 200, 100);
 
 class Particle{
     constructor(x, y){
@@ -57,11 +57,11 @@ class Particle{
         else{
             if (this.x !== this.baseX){
                 let dx = this.x - this.baseX;
-                this.x -= dx/7;
+                this.x -= dx/6;
             }
             if (this.y !== this.baseY){
                 let dy = this.y - this.baseY;
-                this.y -= dy/7;
+                this.y -= dy/6;
             }
         }
     }
@@ -74,7 +74,7 @@ function init(){
             if (textCoordinates.data[(y * 4 * textCoordinates.width) + (x * 4) + 3] > 128){
                 let positionX = x + adjustX;
                 let positionY = y + adjustY;
-                particleArray.push(new Particle(positionX * 7, positionY * 7));
+                particleArray.push(new Particle(positionX * 6, positionY * 6));
             }
         }
     }
