@@ -20,7 +20,7 @@ window.addEventListener('mousemove', function(event){
 
 ctx.fillStyle = 'yellow';
 ctx.font = '2vw Verdana';
-ctx.fillText('It\'s me! Byron', 0, 30);
+ctx.fillText('Mingalarpar!', 0, 20);
 const textCoordinates = ctx.getImageData(0, 0, 300, 100);
 
 class Particle{
