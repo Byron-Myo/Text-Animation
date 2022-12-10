@@ -19,8 +19,8 @@ window.addEventListener("mousemove", function (event) {
 });
 
 ctx.fillStyle = "yellow";
-ctx.font = "3vw ZawgyiOne";
-ctx.fillText("သီဟ", 60, 60);
+ctx.font = "1vw ZawgyiOne";
+ctx.fillText("သီဟ", 60, 200);
 const textCoordinates = ctx.getImageData(0, 0, 500, 500);
 
 class Particle {
