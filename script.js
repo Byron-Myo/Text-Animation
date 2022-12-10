@@ -10,7 +10,7 @@ let adjustY = 1;
 const mouse = {
   x: null,
   y: null,
-  radius: 50,
+  radius: 30,
 };
 
 window.addEventListener("mousemove", function (event) {
@@ -19,9 +19,9 @@ window.addEventListener("mousemove", function (event) {
 });
 
 ctx.fillStyle = "yellow";
-ctx.font = "2vw Verdana";
-ctx.fillText("TH", 0, 20);
-const textCoordinates = ctx.getImageData(0, 0, 300, 100);
+ctx.font = "5vw ZawgyiOne";
+ctx.fillText("သီဟ", 20, 30);
+const textCoordinates = ctx.getImageData(0, 0, 500, 500);
 
 class Particle {
   constructor(x, y) {
@@ -30,10 +30,10 @@ class Particle {
     this.size = 1;
     this.baseX = this.x;
     this.baseY = this.y;
-    this.density = Math.random() * 40 + 5;
+    this.density = Math.random() * 30 + 5;
   }
   draw() {
-    ctx.fillStyle = "rgba(0,255,0,1)";
+    ctx.fillStyle = "rgba(255,255,0,1)";
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
     ctx.closePath();
@@ -75,7 +75,7 @@ function init() {
       ) {
         let positionX = x + adjustX;
         let positionY = y + adjustY;
-        particleArray.push(new Particle(positionX * 3, positionY * 3));
+        particleArray.push(new Particle(positionX * 4, positionY * 3));
       }
     }
   }
@@ -104,7 +104,7 @@ function connect() {
       let dy = particleArray[a].y - particleArray[b].y;
       let distance = Math.sqrt(dx * dx + dy * dy);
       opacityValue = 1 - distance / 10;
-      ctx.strokeStyle = "rgba(255,255,0," + opacityValue + ")";
+      ctx.strokeStyle = "rgba(255,255,255," + opacityValue + ")";
 
       if (distance < 10) {
         ctx.lineWidth = 1;
