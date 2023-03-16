@@ -30,7 +30,7 @@ class Particle {
     this.size = 1;
     this.baseX = this.x;
     this.baseY = this.y;
-    this.density = Math.random() * 30 + 5;
+    this.density = Math.random() * 50 + 5;
   }
   draw() {
     ctx.fillStyle = "rgba(255,255,0,1)";
@@ -56,11 +56,11 @@ class Particle {
     } else {
       if (this.x !== this.baseX) {
         let dx = this.x - this.baseX;
-        this.x -= dx / 3;
+        this.x -= dx / 2;
       }
       if (this.y !== this.baseY) {
         let dy = this.y - this.baseY;
-        this.y -= dy / 3;
+        this.y -= dy / 2;
       }
     }
   }
