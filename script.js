@@ -20,7 +20,7 @@ window.addEventListener("mousemove", function (event) {
 
 ctx.fillStyle = "yellow";
 ctx.font = "5vw ZawgyiOne";
-ctx.fillText("M", 70, 70);
+ctx.fillText("M", 50, 50);
 const textCoordinates = ctx.getImageData(0, 0, 500, 500);
 
 class Particle {
@@ -30,7 +30,7 @@ class Particle {
     this.size = 1;
     this.baseX = this.x;
     this.baseY = this.y;
-    this.density = Math.random() * 50 + 5;
+    this.density = Math.random() * 30 + 5;
   }
   draw() {
     ctx.fillStyle = "rgba(255,255,0,1)";
@@ -104,7 +104,7 @@ function connect() {
       let dy = particleArray[a].y - particleArray[b].y;
       let distance = Math.sqrt(dx * dx + dy * dy);
       opacityValue = 1 - distance / 10;
-      ctx.strokeStyle = "rgba(255,255,255," + opacityValue + ")";
+      ctx.strokeStyle = "rgba(0,255,0," + opacityValue + ")";
 
       if (distance < 10) {
         ctx.lineWidth = 1;
