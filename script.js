@@ -19,7 +19,7 @@ window.addEventListener("mousemove", function (event) {
 });
 
 ctx.fillStyle = "yellow";
-ctx.font = "2vw ZawgyiOne";
+ctx.font = "4vw ZawgyiOne";
 ctx.fillText("T", 60, 60);
 const textCoordinates = ctx.getImageData(0, 0, 500, 500);
 
